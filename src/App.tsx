@@ -5,6 +5,9 @@ import HomePage from './pages/HomePage.tsx';
 import FavoritesPage from './pages/FavoritesPage.tsx';
 
 function App() {
+  /**
+   * todo get the count of favorite items from the redux store.
+   */
   return (
     <>
       <AppBar position="static">
@@ -15,6 +18,7 @@ function App() {
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
+          {/* todo use Badge component from MUI for this item (use orange color): */}
           <Button color="inherit" component={Link} to="/favorites">
             Favorites
           </Button>
