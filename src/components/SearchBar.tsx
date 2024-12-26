@@ -18,7 +18,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         label="Search Recipes"
         variant="outlined"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
         style={{ marginRight: '1rem' }}
       />
       <Button variant="contained" onClick={handleSearch}>

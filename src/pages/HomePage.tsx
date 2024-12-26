@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setRecipes } from '../features/recipesSlice.ts';
+import { Recipe, setRecipes } from '../features/recipesSlice.ts';
 import axios from 'axios';
 import RecipeList from '../components/RecipeList.tsx';
 import SearchBar from '../components/SearchBar.tsx';
 import { RootState } from '../store/store.ts';
 
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+
+interface MealResponse {
+  meals: Recipe[];
+}
 
 const HomePage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -16,7 +20,7 @@ const HomePage: React.FC = () => {
   const searchRecipes = async (searchTerm: string) => {
     setLoading(true);
     try {
-      const response = await axios.get(`${API_URL}${searchTerm}`);
+      const response = await axios.get<MealResponse>(`${API_URL}${searchTerm}`);
       dispatch(setRecipes(response.data.meals || []));
     } catch (error) {
       console.error('Error fetching recipes:', error);
