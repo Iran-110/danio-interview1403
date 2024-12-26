@@ -64,6 +64,15 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
 
+      // Enforce import order
+      'import/order': 'error',
+
+      // Imports should come first
+      'import/first': 'error',
+
+      // Other import rules
+      'import/no-mutable-exports': 'error',
+
       // Unused variables are allowed only with an underscore
       '@typescript-eslint/no-unused-vars': [
         'error',
