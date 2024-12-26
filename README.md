@@ -15,8 +15,13 @@ In `HomePage.tsx` file:
 2. Use an `Spinner` from `Material UI (MUI)` while loading state.
 3. If there is nothing item in the response, show an appropriate message on the screen.
 
+![Result Image](https://github.com/Iran-110/danio-interview1403/blob/questions/public/recipe-list-image.png?raw=true)
+
+
 ## Second Question (Redux State Management)
 Now the user can see the list of food items by searching in the search box.
+In this task, we want to add functionality to the `TOGGLE FAVORITE` button.
+So, if you click on it should add to favorite page in the `favorites` page.
 
 1. In `~/features/recipesSlice.ts`: Complete the `todo` tasks of the specified reducer.
 2. In the `~/App.tsx`: Add a `Badge` (MUI badge) to the `Favorite` item in the AppBar showing the current count of favorite items.
