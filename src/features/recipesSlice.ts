@@ -28,9 +28,9 @@ const recipesSlice = createSlice({
       const recipe = action.payload;
       const isFavorite = state.favorites.some((fav) => fav.idMeal === recipe.idMeal);
       if (isFavorite) {
-        state.favorites = state.favorites.filter((fav) => fav.idMeal !== recipe.idMeal);
+        // todo remove the recipe from the list
       } else {
-        state.favorites.push(recipe);
+        // todo push the recipe to the list
       }
     },
   },
