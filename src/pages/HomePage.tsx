@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Recipe, setRecipes } from '../features/recipesSlice.ts';
+import type { Recipe } from '../features/recipesSlice.ts';
+import { setRecipes } from '../features/recipesSlice.ts';
 import axios from 'axios';
 import RecipeList from '../components/RecipeList.tsx';
 import SearchBar from '../components/SearchBar.tsx';
-import { RootState } from '../store/store.ts';
+import type { RootState } from '../store/store.ts';
 
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 

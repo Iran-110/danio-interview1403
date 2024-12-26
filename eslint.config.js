@@ -29,6 +29,19 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-misused-promises": "off",
+
+      // Import types only with type (import type {A} from "a")
+      '@typescript-eslint/consistent-type-imports': 'error',
+
+      // Unused variables are allowed only with an underscore
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 )
