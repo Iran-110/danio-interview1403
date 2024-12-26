@@ -2,8 +2,13 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface Recipe {
+  // id of the meal
   idMeal: string;
+
+  // the title of the meal
   strMeal: string;
+
+  // image address of the meal
   strMealThumb: string;
 }
 
