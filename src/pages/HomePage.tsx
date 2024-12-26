@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import type { Recipe } from '../features/recipesSlice.ts';
 import RecipeList from '../components/RecipeList.tsx';
 import SearchBar from '../components/SearchBar.tsx';
@@ -20,6 +20,7 @@ interface MealResponse {
 
 const HomePage: React.FC = () => {
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const recipes = useSelector((state: RootState) => state.recipes.recipes);
 
   const searchRecipes = async (searchTerm) => {
