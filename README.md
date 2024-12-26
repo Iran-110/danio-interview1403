@@ -20,3 +20,5 @@ Now the user can see the list of food items by searching in the search box.
 
 1. In `~/features/recipesSlice.ts`: Complete the `todo` tasks of the specified reducer.
 2. In the `~/App.tsx`: Add a `Badge` (MUI badge) to the `Favorite` item in the AppBar showing the current count of favorite items.
+
+![Result Image](https://github.com/Iran-110/danio-interview1403/blob/questions/public/favorite-image.png?raw=true)
