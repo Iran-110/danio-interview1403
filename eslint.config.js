@@ -4,6 +4,7 @@ import pluginReact from "eslint-plugin-react"
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import importPlugin from 'eslint-plugin-import';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default tseslint.config(
@@ -13,6 +14,8 @@ export default tseslint.config(
       js.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       pluginReact.configs.flat.recommended,
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
       eslintPluginPrettierRecommended
     ],
     files: ['**/*.{ts,tsx}'],
@@ -23,6 +26,24 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
       globals: globals.browser,
+    },
+    settings: {
+      'react': {
+        version: 'detect',
+      },
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: 'tsconfig.app.json',
+        },
+        node: {
+          alwaysTryTypes: true,
+          project: 'tsconfig.node.json',
+        },
+      },
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -38,6 +59,10 @@ export default tseslint.config(
 
       // Import types only with type (import type {A} from "a")
       '@typescript-eslint/consistent-type-imports': 'error',
+
+      // Allow removing import React from files
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
 
       // Unused variables are allowed only with an underscore
       '@typescript-eslint/no-unused-vars': [
