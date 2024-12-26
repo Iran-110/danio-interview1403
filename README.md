@@ -12,5 +12,6 @@ In `HomePage.tsx` file:
    1. First, fetch the api from the given api address.
    2. Handle the loading state correctly.
 2. Use an `Spinner` from `Material UI (MUI)` while loading state.
+3. If there is nothing item in the response, show an appropriate message on the screen. 
 
 ## Second Question
