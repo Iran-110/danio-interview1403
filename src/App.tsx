@@ -1,9 +1,9 @@
 import './App.css';
-import { ThemeProvider } from './theme';
-import store from './store/store.ts';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Link, Route, Routes } from 'react-router';
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import store from './store/store.ts';
+import { ThemeProvider } from './theme';
 import HomePage from './pages/HomePage.tsx';
 import FavoritesPage from './pages/FavoritesPage.tsx';
 

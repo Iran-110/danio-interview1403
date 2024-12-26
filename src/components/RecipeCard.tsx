@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleFavorite } from '../features/recipesSlice.ts';
 import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
+import { toggleFavorite } from '../features/recipesSlice.ts';
 
 interface RecipeCardProps {
   recipe: {
